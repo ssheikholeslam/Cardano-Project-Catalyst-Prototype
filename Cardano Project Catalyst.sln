@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cardano Project Catalyst", "Cardano Project Catalyst.csproj", "{A7FDF5EA-16C0-45AE-AD4A-1954709605EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D21B6DF3-6E6D-4CCE-BFB4-212618FA17DC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7FDF5EA-16C0-45AE-AD4A-1954709605EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7FDF5EA-16C0-45AE-AD4A-1954709605EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7FDF5EA-16C0-45AE-AD4A-1954709605EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7FDF5EA-16C0-45AE-AD4A-1954709605EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4020BFEB-9760-4F3B-A6C7-AA8E10F10946}
+	EndGlobalSection
+EndGlobal

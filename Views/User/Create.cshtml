@@ -1,0 +1,136 @@
+﻿@model Cardano_Catalyst.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Project Catalyst</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+</head>
+
+<body class="mt-5">
+    <header class="text-center">
+        <img class="rounded mx-auto d-block" src="~/images/iohk_logo_2.png" />
+        <h1 class="h2 font-weight-normal">
+            Create Your Account
+        </h1>
+        <p class="mt-4 text-secondary">
+            Already have an account? <a href="/Secured" class="text-capitalize text-primary">Log in</a>
+        </p>
+    </header>
+    <fieldset>
+        <div class="mx-auto" style="width: 375px;">
+            @if(ViewBag.Message != null)
+            {
+                <div class="p-1 mb-2 bg-success text-white">@ViewBag.Message</div>
+            }
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <div class="input-group">
+                        <input asp-for="Name" class="form-control" required />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Email Address</label>
+                    <div class="input-group" id="showHidePwd">
+                        <input asp-for="Email" class="form-control" type="email" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <div class="input-group" id="showHidePwd">
+                        <input id="txtPassword" asp-for="Password" class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@@#$%^&*_=+-]).{8,12}$" />
+                        <div class="input-group-append">
+                            <a href="#" class="btn btn-secondary" type="button">
+                                <span id="pwdIcon" class="fa fa-eye-slash icon" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label id="lblConPwd">Confirm Password</label>
+                    <div class="input-group" id="showHidePwdConfirm">
+                        <input id="txtConfirmPassword" class="form-control" type="password" required />
+                        <div class="input-group-append">
+                            <a href="#" class="btn btn-secondary" type="button">
+                                <span id="conPwdIcon" class="fa fa-eye-slash icon" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 <span id='message'></span>
+                <div class="form-group mt-2">
+                    <b>Default Community Language:</b> English
+                </div>
+                <div class="form-group">
+                    <b>Language supported by the Community:</b> English
+                </div>
+                <div class="mt-3">
+                    <input type="checkbox" id="cbNewsSubscribed" class="custom-checkbox">
+                    <label id="lblNewsSubscribed">Send me news and updates about Project Catalyst</label>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <button id="btnRegister" class="btn btn-primary btn-block" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </fieldset>
+
+    <footer>
+        <p class="text-center text-secondary fixed-bottom">Copyright &copy; @DateTime.Now.Year | All rights reserved</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#showHidePwd a').on('click', function () {
+                event.preventDefault();
+                if ($('#txtPassword').attr("type") == "text") {
+                    $('#txtPassword').attr('type', 'password');
+                    $('#showHidePwd #pwdIcon').addClass("fa-eye-slash");
+                    $('#showHidePwd #pwdIcon').removeClass("fa-eye");
+                } else if ($('#txtPassword').attr("type") == "password") {
+                    $('#txtPassword').attr('type', 'text');
+                    $('#showHidePwd #pwdIcon').removeClass("fa-eye-slash");
+                    $('#showHidePwd #pwdIcon').addClass("fa-eye");
+                }
+            });
+            $('#showHidePwdConfirm a').on('click', function () {
+                event.preventDefault();
+                if ($('#txtConfirmPassword').attr("type") == "text") {
+                    $('#txtConfirmPassword').attr('type', 'password');
+                    $('#showHidePwdConfirm #conPwdIcon').addClass("fa-eye-slash");
+                    $('#showHidePwdConfirm #conPwdIcon').removeClass("fa-eye");
+                } else if ($('#txtConfirmPassword').attr("type") == "password") {
+                    $('#txtConfirmPassword').attr('type', 'text');
+                    $('#showHidePwdConfirm #conPwdIcon').removeClass("fa-eye-slash");
+                    $('#showHidePwdConfirm #conPwdIcon').addClass("fa-eye");
+                }
+            });
+        });
+
+        $('#txtPassword, #txtConfirmPassword').on('keyup', function () {
+            if ($('#txtPassword').val() == $('#txtConfirmPassword').val()) {
+                $('#message').html('Matching').css('color', 'green');
+            } else 
+                $('#message').html('Not Matching').css('color', 'red');
+        });
+    </script>
+</body>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</html>
