@@ -1,35 +1,36 @@
 ﻿@{
     ViewData["Title"] = "Community Landing";
+    Layout = "_Layout";
 }
 
 <div id="communityLandingCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="Images/community_landing_image.png" alt="First slide" />
+            <img class="d-block w-100" src="~/Images/community_landing_image.png" alt="First slide" />
         </div>
     </div>
 </div>
-<section id="how-it-works">
+<section id="howItWorks" class="how-it-works">
     <h2 class="mt-5 text-center">
         Here's how it works
     </h2>
     <div class="mt-5 row">
         <div class="text-center col-lg-4">
-            <img src="Images/innovate_together.png" style="display:block; margin:30px auto 10px;" />
+            <img src="~/Images/innovate_together.png" style="display:block; margin:30px auto 10px;" />
             <h3 style="font-weight:bold">Innovate Together</h3>
             <p class="text-center">
                 Got an Idea? Create an impactful proposal and collaborate with the community to develop and refine it.
             </p>
         </div>
         <div class="text-center col-lg-4">
-            <img src="Images/vote_favorite.png" style="display:block; margin:40px auto 30px;" />
+            <img src="~/Images/vote_favorite.png" style="display:block; margin:40px auto 30px;" />
             <h3 style="font-weight:bold">Vote for your favorite ideas</h3>
             <p class="text-center">
                 Use a voting app to choose ideas with impact worth funding. Get rewarded in ADA for taking part.
             </p>
         </div>
         <div class="text-center col-lg-4">
-            <img src="Images/stay_up_to_date.png" style="display:block; margin:30px auto 10px;" />
+            <img src="~/Images/stay_up_to_date.png" style="display:block; margin:30px auto 10px;" />
             <h3 style="font-weight:bold">Stay up to date</h3>
             <p class="text-center">
                 Recieve regular updates on all the funded ideas, so you can follow along and see how things are progressing.
@@ -39,7 +40,7 @@
 </section>
 <article class="text-center">
     <a href="active-campaigns">
-        <img src="Images/arrow_down.png" />
+        <img src="~/Images/arrow_down.png" />
     </a>
     <section id="active-campaigns" class="mt-5">
         <h1 class="text-center" style="font-weight:bold">Active Campaigns</h1>
