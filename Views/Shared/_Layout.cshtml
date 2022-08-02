@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow fixed-top mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img id="imgLogo" class="d-inline-block align-top" src="~/images/iohk_logo.png" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -22,11 +22,11 @@
                         <li>
                             <div class="page-menu">
                                 <div class="selected-page">
-                                    <p class="caret"><i class="fa fa-list"></i>Comunity Landing</p>
+                                    <p class="page"><i class="fa fa-list"></i>Comunity Landing</p>
                                     <div class="dropdownToggle">
                                         <label for="btn" class="toggle"><span class="fa-solid fa-caret-down"></span></label>
-                                        <input type="checkbox" id="btn" class="toggleCheck" onchange="toggled()" />
-                                    </div> 
+                                        <input type="checkbox" id="btn" class="toggle-check" />
+                                    </div>
                                 </div>
                                 <ul class="pages">
                                     <li>
@@ -227,14 +227,17 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.selected-page .toggle').click(
-                function() {
-                    $('.selected-page .toggle span').toggleClass("rotate");
-                    if ($('.toggleCheck').is(":checked"))
-                        $(".pages").css("display", "none");
-                    else
-                        $(".pages").css("display", "block");
-                });
+            $(".selected-page").click(function(e) {
+                if (!$(e.target).is('input:checkbox')) {
+                    var $checkbox = $(this).find('input:checkbox');
+                    $checkbox.prop('checked', !$checkbox.prop('checked'));
+                }
+                $('.selected-page .toggle span').toggleClass("rotate");
+                if ($('.toggle-check').is(":checked"))
+                    $(".pages").css("display", "block");
+                else
+                    $(".pages").css("display", "none");
+            });
         });
     </script>
     @RenderSection("Scripts", required: false)
