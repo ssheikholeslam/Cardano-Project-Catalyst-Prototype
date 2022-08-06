@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="~/css/campaign-v2/ideascale-v4-responsive.css" />
+    <link rel="stylesheet" href="~/css/mediaelementplayer.min.css" />
+    <link rel="stylesheet" href="~/lib/ideascale-ui/ideascale-ui.css" />
 </head>
 <body>
     <header>
@@ -108,64 +111,64 @@
                         @{
                             if (User?.Identity?.IsAuthenticated ?? false)
                             {
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
-                                        <i class="fa-solid fa-compass"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
-                                        <i class="fa-solid fa-flag"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
-                                        <i class="fa-solid fa-square-check"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
-                                        <i class="fa-solid fa-bell"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
-                                        <i class="fa-solid fa-envelope"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-outline-secondary btn-outline-light" type="button" data-toggle="dropdown">
-                                        <i class="fa-solid fa-circle-plus fa-2xl" style="color: darkorange;"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a asp-controller="Account" asp-action="Logout" class="btn btn-danger">Logout</a>
-                            </li>
+                                    <li class="nav-item">
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
+                                                <i class="fa-solid fa-compass"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
+                                                <i class="fa-solid fa-flag"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
+                                                <i class="fa-solid fa-square-check"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
+                                                <i class="fa-solid fa-bell"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown">
+                                                <i class="fa-solid fa-envelope"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary btn-outline-light" type="button" data-toggle="dropdown">
+                                                <i class="fa-solid fa-circle-plus fa-2xl" style="color: darkorange;"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Account" asp-action="Logout" class="btn btn-danger">Logout</a>
+                                    </li>
                             }
                             else
                             {
-                            <li>
-                                <a href="/User/Create" class="btn btn-outline-secondary" type="button">
-                                    <i class="fa fa-user-plus"></i> Register
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Secured" class="btn btn-outline-secondary" type="button">
-                                    <i class="fa fa-arrow-circle-right"></i> Log in
-                                </a>
-                            </li>
+                                    <li>
+                                        <a href="/User/Create" class="btn btn-outline-secondary" type="button">
+                                            <i class="fa fa-user-plus"></i> Register
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/Secured" class="btn btn-outline-secondary" type="button">
+                                            <i class="fa fa-arrow-circle-right"></i> Log in
+                                        </a>
+                                    </li>
                             }
                         }
                 </ul>
