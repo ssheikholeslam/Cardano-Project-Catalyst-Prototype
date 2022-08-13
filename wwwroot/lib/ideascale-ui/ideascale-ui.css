@@ -4461,13 +4461,13 @@ $theme-link-color-hover: 'theme-link-color-hover';*/
 .label-field-neutral-regular,
 .label-field-neutral-light,
 .label-field-trending_top {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 400;
     display: inline-block;
     position: relative;
     top: -3px;
     border-radius: 2px;
-    padding: 1px 4px 2px;
+    padding: 5px 10px;
     line-height: 1.2;
 }
 
