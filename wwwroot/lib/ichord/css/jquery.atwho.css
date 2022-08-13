@@ -1,0 +1,48 @@
+﻿.atwho-view {
+    position: absolute;
+    top: 0;
+    /* left: 0; */ /* !!!READ BEFORE UPGRADE!!! commented out for RTL support (via rtlcss) */
+    display: none;
+    margin-top: 18px;
+    width: 260px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 0 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    overflow: auto;
+    z-index: 11110 !important;
+}
+
+    .atwho-view .cur {
+        background: #F0F2F5;
+    }
+
+    .atwho-view ul {
+        /* width: 100px; */
+        list-style: none;
+        padding: 7px 0;
+        margin: auto;
+        min-width: 160px;
+    }
+
+        .atwho-view ul li {
+            font-size: 14px;
+            display: flex;
+            padding: 7px 9px;
+            cursor: pointer;
+            align-items: center;
+            line-height: 1.2;
+        }
+
+            .atwho-view ul li strong {
+                font-weight: 700;
+            }
+
+    .atwho-view small {
+        font-size: 14px;
+        color: #666;
+        display: block;
+    }
+
+    .atwho-view .avatar-container {
+        margin-right: 7px;
+    }
