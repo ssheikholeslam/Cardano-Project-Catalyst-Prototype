@@ -16100,10 +16100,12 @@ body {
     text-decoration: none !important;
     padding: 0 15px;
     height: 50px;
+    width: 45px;
     line-height: 48px;
     white-space: nowrap;
     font-size: 14px;
     font-weight: bold;
+    text-align: center;
 }
 
     #universal-top-bar .navbar-nav > li > a .is-svg-icon {
@@ -16163,7 +16165,7 @@ body {
 #universal-top-bar .navbar-nav > li > a:focus,
 #universal-top-bar .navbar-nav > li > a:hover {
     background-color: #F0F0F0 !important;
-    color: #384EC1 !important;
+    color: #333 !important;
     outline: none;
 }
 
