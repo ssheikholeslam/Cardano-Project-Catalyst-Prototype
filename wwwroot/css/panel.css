@@ -1,0 +1,24 @@
+﻿body {
+    background-color: #F5F5F5;
+}
+
+.idea-stats {
+    visibility: hidden;
+}
+
+.welcome {
+    background-color: #798AFF;
+    color: #ffffff !important;
+}
+
+.grid-view .stage-action-block .stage-action .stage-data {
+    visibility: hidden;
+}
+
+.grid-view .stage-action-block .stage-action-ideate {
+    visibility: hidden;
+}
+
+.stage-action-ideate > .stage-data > span {
+    visibility: hidden;
+}
