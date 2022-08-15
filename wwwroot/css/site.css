@@ -1,9 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-button.accept-policy {
-    font-size: 1rem;
-    line-height: inherit;
+a:hover {
+    text-decoration: none;
 }
 
 /* Footer Styling
@@ -16,7 +15,6 @@ button.accept-policy {
         text-align: left !important;
         font-weight: 900;
         color: #0089ff;
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
         font-size: 18px;
     }
 
@@ -26,7 +24,7 @@ button.accept-policy {
     }
 
     .footer a,
-    p {
+    .footer p {
         color: white;
         text-decoration: none;
     }
@@ -36,7 +34,7 @@ button.accept-policy {
             text-decoration: none;
         }
 
-/*Page Selector Styling*/
+/*Universal Navbar Page Selector Styling*/
 .selected-page {
     cursor: pointer;
     width: 300px;
@@ -221,60 +219,7 @@ hr.dark {
     margin-bottom: 45px;
 }
 
-.cl-row {
-    padding-top: 45px;
-    padding-bottom: 75px;
-}
-
 .active-campaings p {
     color: #333333;
     font-size: 16px;
 }
-
-.cl-campaings {
-    text-align: left;
-}
-
-    .cl-campaings .cl-campaign-logo-box {
-        height: 250px;
-        background-size: cover !important;
-        background-repeat: no-repeat;
-        position: relative;
-        border: 1px solid #ccc;
-        border-bottom: none;
-    }
-
-    .cl-campaings .cl-campaign-title {
-        position: absolute;
-        bottom: 5px;
-        left: 15px;
-        right: 15px;
-        font-size: 25px;
-        line-height: 30px;
-        font-weight: 900;
-        color: #fff;
-        text-decoration: none;
-        text-shadow: #000 1px 2px 17px;
-    }
-
-    .cl-campaings .cl-campaign-box {
-        background: #fff;
-        border: 1px solid #ccc;
-        padding: 15px;
-        height: 190px;
-        margin-bottom: 30px;
-        transition: 0.25s;
-    }
-
-        .cl-campaings .cl-campaign-box:hover {
-            background: #ebebeb;
-        }
-
-    .cl-campaings .cl-campaign-idea-number {
-        position: absolute;
-        bottom: 50px;
-        left: 40px;
-        font-size: 16px;
-        color: #999;
-        font-weight: 900;
-    }
