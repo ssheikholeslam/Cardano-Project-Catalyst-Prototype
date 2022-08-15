@@ -1,4 +1,5 @@
 ﻿@charset "UTF-8";
+@import url('https://rsms.me/inter/inter.css');
 /* cannot use "none", otherwise certain multiple-shadow rules (like for :focus) will be invalid */
 /* cannot use "none", otherwise certain multiple-shadow rules (like for :focus) will be invalid */
 /* cannot use "none", otherwise certain multiple-shadow rules (like for :focus) will be invalid */
