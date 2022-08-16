@@ -127,225 +127,287 @@
                         @{
                             if (User?.Identity?.IsAuthenticated ?? false)
                             {
-                            <div>
-                                <ul class="navbar-nav ml-auto ml-lg-0">
-                                    <li class="border-right-0 dropdown slidable-dropdown d-none d-lg-block">
-                                        <a class="border-left" href="#" role="button" id="utb-custom-pages-indicator" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fa-solid fa-compass"></i>
-                                        </a>
+                                        <div>
+                                            <ul class="navbar-nav ml-auto ml-lg-0">
+                                                <li class="border-right-0 dropdown slidable-dropdown d-none d-lg-block">
+                                                    <a class="border-left" href="#" role="button" id="utb-custom-pages-indicator" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fa-solid fa-compass"></i>
+                                                    </a>
 
-                                        <div class="dropdown-menu" aria-labelledby="utb-custom-pages-indicator" style="width: 280px;">
-                                            <span class="select2-results">
-                                                <ul class="select2-results__options" role="listbox" id="select2-topbar-custom-pages-dropdown-results">
-                                                    <li class="select2-results__option select2-results__option--highlighted" role="option">
-                                                        <span class="py-1 px-3 text-truncate d-block" title="Quick FAQ">Quick FAQ</span>
-                                                    </li>
-                                                    <li class="select2-results__option" role="option">
-                                                        <span class="py-1 px-3 text-truncate d-block" title="Voting results">Voting results</span>
-                                                    </li>
-                                                </ul>
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown slidable-dropdown d-none d-lg-block">
-                                        <a class="border-right" href="#" role="button" id="utb-labels-indicator" data-toggle="dropdown">
-                                            <i class="fa-solid fa-flag"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="utb-labels-indicator" style="width: 200px; position: absolute;">
-                                            <strong class="select2-results__group">
-                                                <span class="w-100 label-span rounded">Labels</span>
-                                            </strong>
-                                            <ul class="label-indecators">
-                                                <li>
-                                                    <div class="w-100 label-wrapper">
-                                                        <span class="w-100 label-span rounded label label-field-edited">
-                                                            Edited
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="w-100 label-wrapper">
-                                                        <span class="w-100 label-span rounded label label-field-in-reserve">
-                                                            In Reserve
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="w-100 label-wrapper">
-                                                        <span class="w-100 label-span rounded label label-field-off-topic">
-                                                            Off Topic
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="w-100 label-wrapper">
-                                                        <span class="w-100 label-span rounded label label-field-trending_top">
-                                                            Trending
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <span class="select2-dropdown topbar-labels-dropdown select2-dropdown--below">
-                                                <span class="select2-results">
-                                                    <ul class="select2-results__options" role="listbox" id="select2-topbar-labels-dropdown-results">
-                                                        <li class="select2-results__option" role="group" aria-label="Labels">
-                                                            <strong class="select2-results__group">
-                                                                <span class="w-100 label-span rounded">Labels</span>
-                                                            </strong>
-                                                            <ul class="select2-results__options select2-results__options--nested">
+                                                    <div class="dropdown-menu" aria-labelledby="utb-custom-pages-indicator" style="width: 280px;">
+                                                        <span class="select2-results">
+                                                            <ul class="select2-results__options" role="listbox" id="select2-topbar-custom-pages-dropdown-results">
                                                                 <li class="select2-results__option select2-results__option--highlighted" role="option">
-                                                                    <div class="w-100 label-wrapper">
-                                                                        <span class="w-100 label-span rounded label label-field-edited">Edited</span>
-                                                                    </div>
+                                                                    <span class="py-1 px-3 text-truncate d-block" title="Quick FAQ">Quick FAQ</span>
                                                                 </li>
                                                                 <li class="select2-results__option" role="option">
-                                                                    <div class="w-100 label-wrapper">
-                                                                        <span class="w-100 label-span rounded label label-field-in-reserve">In Reserve</span>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="select2-results__option" role="option">
-                                                                    <div class="w-100 label-wrapper">
-                                                                        <span class="w-100 label-span rounded label label-field-off-topic">Off Topic</span>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="select2-results__option" role="option">
-                                                                    <div class="w-100 label-wrapper">
-                                                                        <span class="w-100 label-span rounded label label-field-trending_top">Trending</span>
-                                                                    </div>
+                                                                    <span class="py-1 px-3 text-truncate d-block" title="Voting results">Voting results</span>
                                                                 </li>
                                                             </ul>
-                                                        </li>
-                                                    </ul>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown slidable-dropdown border-right-0">
-                                        <a class="utb-with-numeric-indicator" href="#" role="button" id="utb-member-action-item-anchor" data-toggle="dropdown">
-                                            <i class="fa-solid fa-square-check"></i>
-                                            <span class="badge dot" aria-hidden="true">•</span>
-                                            <span class="sr-only">has alerts</span>
-                                        </a>
-                                        <div id="utb-action-item-box" class="dropdown-menu utb-msg-container click-bubble-off no-focus-outline" aria-labelledby="utb-member-action-item-anchor">
-                                            <div class="utb-msg-heading">
-                                                <span>Drafts to Submit</span>
-                                                <span class="float-right">
-                                                    <a href="#" class="text-primary"> See All </a>
-                                                </span>
-                                            </div>
-                                            <ul class="utb-msg-list utb-responsive-height">
-                                                <li>
-                                                    <a href="#">
-                                                        <strong style="font-size: 12px; color: #8595ff;">Project Resource Pool</strong>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="utb-msg-heading">
-                                                <span>Profile Action Items</span>
-                                            </div>
-                                            <ul class="utb-msg-list utb-responsive-height" data-features="modal-dialog">
-                                                <li>
-                                                    <a class="modal-dialog-trigger" href="#">
-                                                        <strong style="font-size: 12px; color: #8595ff;">Profile Questions [ 1 ]</strong>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown slidable-dropdown border-right-0">
-                                        <a class="" href="#" role="button" id="utb-notification-msg-indicator" data-toggle="dropdown">
-                                            <i class="fa-solid fa-bell"></i>
-                                        </a>
-                                        <div id="utb-notification-box" class="dropdown-menu utb-msg-container click-bubble-off no-focus-outline" aria-labelledby="utb-notification-msg-indicator" tabindex="-1">
-                                            <div class="utb-msg-heading">
-                                                <h5>Notifications</h5>
-                                                <div class="utb-msg-filter">
-                                                    <a href="#" class="btn font-weight-normal btn-secondary font-weight-bold">
-                                                        All
-                                                    </a>
-                                                    <a href="#" class="btn font-weight-normal">
-                                                        Ideas
-                                                    </a>
-                                                    <a href="#" class="btn font-weight-normal">
-                                                        Kudos
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <ul class="utb-msg-list member-notifications utb-responsive-height">
-                                                <li class="">
-                                                    <div class="utb-col-avatar">
-                                                        <img class="utb-avatar avatar avatar-sm" src="https://app.ideascale.com/userimages/avatar/583/5835749/8C33E504-E06C-4990-BA97-5EC4B316DC00-fbd86c.jpeg" alt="">
+                                                        </span>
                                                     </div>
-                                                    <div class="utb-col-content" style="font-size: 12px;">
-                                                        <a href="/a/member/Headelf/3114429-48088">Headelf</a> commented on idea, <a href="/a/dtd/C4S-Cardano4Seniors-Animation/413950-48088#idea-tab-comments">C4S-Cardano4Seniors-Animation</a>
+                                                </li>
+                                                <li class="dropdown slidable-dropdown d-none d-lg-block">
+                                                    <a class="border-right" href="#" role="button" id="utb-labels-indicator" data-toggle="dropdown">
+                                                        <i class="fa-solid fa-flag"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="utb-labels-indicator" style="width: 200px; position: absolute;">
+                                                        <strong class="select2-results__group">
+                                                            <span class="w-100 label-span rounded">Labels</span>
+                                                        </strong>
+                                                        <ul class="label-indecators">
+                                                            <li>
+                                                                <div class="w-100 label-wrapper">
+                                                                    <span class="w-100 label-span rounded label label-field-edited">
+                                                                        Edited
+                                                                    </span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="w-100 label-wrapper">
+                                                                    <span class="w-100 label-span rounded label label-field-in-reserve">
+                                                                        In Reserve
+                                                                    </span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="w-100 label-wrapper">
+                                                                    <span class="w-100 label-span rounded label label-field-off-topic">
+                                                                        Off Topic
+                                                                    </span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="w-100 label-wrapper">
+                                                                    <span class="w-100 label-span rounded label label-field-trending_top">
+                                                                        Trending
+                                                                    </span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <span class="select2-dropdown topbar-labels-dropdown select2-dropdown--below">
+                                                            <span class="select2-results">
+                                                                <ul class="select2-results__options" role="listbox" id="select2-topbar-labels-dropdown-results">
+                                                                    <li class="select2-results__option" role="group" aria-label="Labels">
+                                                                        <strong class="select2-results__group">
+                                                                            <span class="w-100 label-span rounded">Labels</span>
+                                                                        </strong>
+                                                                        <ul class="select2-results__options select2-results__options--nested">
+                                                                            <li class="select2-results__option select2-results__option--highlighted" role="option">
+                                                                                <div class="w-100 label-wrapper">
+                                                                                    <span class="w-100 label-span rounded label label-field-edited">Edited</span>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="select2-results__option" role="option">
+                                                                                <div class="w-100 label-wrapper">
+                                                                                    <span class="w-100 label-span rounded label label-field-in-reserve">In Reserve</span>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="select2-results__option" role="option">
+                                                                                <div class="w-100 label-wrapper">
+                                                                                    <span class="w-100 label-span rounded label label-field-off-topic">Off Topic</span>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="select2-results__option" role="option">
+                                                                                <div class="w-100 label-wrapper">
+                                                                                    <span class="w-100 label-span rounded label label-field-trending_top">Trending</span>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </span>
+                                                        </span>
                                                     </div>
-                                                    <small class="date" style="font-size: 9.5px;"><time datetime="2022-07-26T04:05:52.000-07:00">26/Jul/22 7:05 AM</time></small>
+                                                </li>
+                                                <li class="dropdown slidable-dropdown border-right-0">
+                                                    <a class="utb-with-numeric-indicator" href="#" role="button" id="utb-member-action-item-anchor" data-toggle="dropdown">
+                                                        <i class="fa-solid fa-square-check"></i>
+                                                        <span class="badge dot" aria-hidden="true">•</span>
+                                                        <span class="sr-only">has alerts</span>
+                                                    </a>
+                                                    <div id="utb-action-item-box" class="dropdown-menu utb-msg-container click-bubble-off no-focus-outline" aria-labelledby="utb-member-action-item-anchor">
+                                                        <div class="utb-msg-heading">
+                                                            <span>Drafts to Submit</span>
+                                                            <span class="float-right">
+                                                                <a href="#" class="text-primary"> See All </a>
+                                                            </span>
+                                                        </div>
+                                                        <ul class="utb-msg-list utb-responsive-height">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <strong style="font-size: 12px; color: #8595ff;">Project Resource Pool</strong>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="utb-msg-heading">
+                                                            <span>Profile Action Items</span>
+                                                        </div>
+                                                        <ul class="utb-msg-list utb-responsive-height" data-features="modal-dialog">
+                                                            <li>
+                                                                <a class="modal-dialog-trigger" href="#">
+                                                                    <strong style="font-size: 12px; color: #8595ff;">Profile Questions [ 1 ]</strong>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="dropdown slidable-dropdown border-right-0">
+                                                    <a class="" href="#" role="button" id="utb-notification-msg-indicator" data-toggle="dropdown">
+                                                        <i class="fa-solid fa-bell"></i>
+                                                    </a>
+                                                    <div id="utb-notification-box" class="dropdown-menu utb-msg-container click-bubble-off no-focus-outline" aria-labelledby="utb-notification-msg-indicator" tabindex="-1">
+                                                        <div class="utb-msg-heading">
+                                                            <h5>Notifications</h5>
+                                                            <div class="utb-msg-filter">
+                                                                <a href="#" class="btn font-weight-normal btn-secondary font-weight-bold">
+                                                                    All
+                                                                </a>
+                                                                <a href="#" class="btn font-weight-normal">
+                                                                    Ideas
+                                                                </a>
+                                                                <a href="#" class="btn font-weight-normal">
+                                                                    Kudos
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="utb-msg-list member-notifications utb-responsive-height">
+                                                            <li class="">
+                                                                <div class="utb-col-avatar">
+                                                                    <img class="utb-avatar avatar avatar-sm" src="https://app.ideascale.com/userimages/avatar/583/5835749/8C33E504-E06C-4990-BA97-5EC4B316DC00-fbd86c.jpeg" alt="">
+                                                                </div>
+                                                                <div class="utb-col-content" style="font-size: 12px;">
+                                                                    <a href="/a/member/Headelf/3114429-48088">Headelf</a> commented on idea, <a href="/a/dtd/C4S-Cardano4Seniors-Animation/413950-48088#idea-tab-comments">C4S-Cardano4Seniors-Animation</a>
+                                                                </div>
+                                                                <small class="date" style="font-size: 9.5px;"><time datetime="2022-07-26T04:05:52.000-07:00">26/Jul/22 7:05 AM</time></small>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="utb-msg-footer clearfix">
+                                                            <a class="link-btn-default pull-left float-left" href="#">
+                                                                View all notifications
+                                                                <span class="badge badge-pill badge-danger">357</span>
+                                                            </a>
+                                                            <a class="btn btn-secondary pull-right float-right" href="#">View subscriptions</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="dropdown slidable-dropdown border-right-0">
+                                                    <a class="" href="#" role="button" data-toggle="dropdown">
+                                                        <i class="fa-solid fa-envelope"></i>
+                                                    </a>
+                                                    <div id="utb-msg-box" class="dropdown-menu dropdown-menu-right" aria-labelledby="utb-notification-msg-indicator" tabindex="-1">
+                                                        <div class="utb-msg-heading">
+                                                            <h5>Messages</h5>
+                                                        </div>
+                                                        <div class="utb-msg-no-new" style="font-size: 14px;">There are no new messages.</div>
+                                                        <div class="utb-msg-footer text-center">
+                                                            <div>
+                                                                <span class="unread-count" style="font-size: 12px;">0 unread</span>
+                                                            </div>
+                                                            <div class="message-footer-button-container">
+                                                                <button class="view-button">
+                                                                    <a class="btn btn-block" style="font-size: 14px" href="#">
+                                                                        View All Messages
+                                                                    </a>
+                                                                </button>
+                                                                <button class="compose-button">
+                                                                    <a class="btn btn-block" style="font-size: 14px" href="#">
+                                                                        Compose
+                                                                    </a>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a disabled="!true" href="https://cardano.ideascale.com/c/?submission-form=open" title="Submit Your Idea" class="no-dropdown" rel="nofollow">
+                                                        <i class="fa-solid fa-circle-plus fa-2x" style="color: #fb5629; padding-top: 10px;"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown slidable-dropdown m-0" id="utb-profile-dropdown">
+                                                    <a class="utb-avatar-menu" href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" style="width:55px;">
+                                                        <div class="utb-avatar-col">
+                                                            <img id="topbar-avatar" class="utb-avatar avatar avatar-sm" src="https://secure.gravatar.com/avatar/3f6beaa317adead387d7fd5afb87ef23.jpg?s=80&amp;d=https%3A%2F%2Fstatic.ideascale.com%2Fimages%2Favatar%2Fdefault-J.png" alt="">
+                                                        </div>
+                                                    </a>
+                                                    <div class="dropdown-menu click-bubble-off no-focus-outline" id="utb-user-menu" tabindex="-1">
+                                                        <a class="hidden-md-min profile-dropdown-logo" href="/a/">
+                                                            <img src="https://cardano.ideascale.com/community-library/accounts/93/936143/IOHK_logo_topbar-a659a6.png" alt="Logo IOHK">
+                                                        </a>
+                                                        <ul class="dropdown-menu-item-group">
+                                                            <li class="lucido user-info">
+                                                                <a class="bg-transparent" href="https://cardano.ideascale.com/c/profile/3097498">
+                                                                    <div class="d-flex">
+                                                                        <div class="utb-avatar-col">
+                                                                            <img id="topbar-avatar" class="utb-avatar avatar avatar-md" src="https://secure.gravatar.com/avatar/3f6beaa317adead387d7fd5afb87ef23.jpg?s=80&amp;d=https%3A%2F%2Fstatic.ideascale.com%2Fimages%2Favatar%2Fdefault-J.png" alt="">
+                                                                        </div>
+                                                                        <div class="d-flex flex-column">
+                                                                            <span class="utb-username lucido-username  utb-username-only  " title="Joey Chessher">
+                                                                                Joey Chessher
+                                                                            </span>
+                                                                            <small class="text-muted font-size-sm" title="joey.chessher">
+                                                                                    @@joey.chessher
+                                                                            </small>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="dropdown-divider"></li>
+                                                            <li>
+                                                                <a data-element-id="invite-friend" href="https://cardano.ideascale.com/a/invite/friend">
+                                                                    <i class="fa-solid fa-user-plus"></i>
+                                                                    Invite Friends
+                                                                </a>
+                                                            </li>
+                                                            <li class="dropdown-divider"></li>
+                                                            <li>
+                                                                <a data-element-id="personal-settings" href="https://app.ideascale.com/a/person/profile/">
+                                                                    <i class="fa-solid fa-user-gear"></i>
+                                                                    Personal Settings
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-element-id="notifications" href="https://app.ideascale.com/a/person/notifications/#member-3097498">
+                                                                    <i class="fa-solid fa-bell"></i>
+                                                                    Notifications
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-element-id="help" href="https://support.ideascale.com/">
+                                                                    <i class="fa-solid fa-circle-question"></i>
+                                                                    Help
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-element-id="new-features" href="https://cardano.ideascale.com/a/new-features">
+                                                                    <i class="fa-solid fa-cake-candles"></i>
+                                                                    New Features
+                                                                </a>
+                                                            </li>
+                                                            <li class="dropdown-divider"></li>
+                                                            <li>
+                                                                <a asp-controller="Account" asp-action="Logout" class="dropdown-item" data-element-id="logout-link"><i class="fa-solid fa-power-off"></i> Logout</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </li>
                                             </ul>
-                                            <div class="utb-msg-footer clearfix">
-                                                <a class="link-btn-default pull-left float-left" href="#">
-                                                    View all notifications
-                                                    <span class="badge badge-pill badge-danger">357</span>
-                                                </a>
-                                                <a class="btn btn-secondary pull-right float-right" href="#">View subscriptions</a>
-                                            </div>
                                         </div>
-                                    </li>
-                                    <li class="dropdown slidable-dropdown border-right-0">
-                                        <a class="" href="#" role="button" data-toggle="dropdown">
-                                            <i class="fa-solid fa-envelope"></i>
-                                        </a>
-                                        <div id="utb-msg-box" class="dropdown-menu dropdown-menu-right" aria-labelledby="utb-notification-msg-indicator" tabindex="-1">
-                                            <div class="utb-msg-heading">
-                                                <h5>Messages</h5>
-                                            </div>
-                                            <div class="utb-msg-no-new" style="font-size: 14px;">There are no new messages.</div>
-                                            <div class="utb-msg-footer text-center">
-                                                <div>
-                                                    <span class="unread-count" style="font-size: 12px;">0 unread</span>
-                                                </div>
-                                                <div class="message-footer-button-container">
-                                                    <button class="view-button">
-                                                        <a class="btn btn-block" style="font-size: 14px" href="#">
-                                                            View All Messages
-                                                        </a>
-                                                    </button>
-                                                    <button class="compose-button">
-                                                        <a class="btn btn-block" style="font-size: 14px" href="#">
-                                                            Compose
-                                                        </a>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a disabled="!true" href="https://cardano.ideascale.com/c/?submission-form=open" title="Submit Your Idea" class="no-dropdown" rel="nofollow">
-                                            <i class="fa-solid fa-circle-plus fa-2x" style="color: #fb5629; padding-top: 10px;"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <div>
-                                            <a asp-controller="Account" asp-action="Logout" class="btn btn-danger mx-2 my-1">Logout</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
                             }
                             else
                             {
-                            <ul class="navbar-nav ml-auto ml-lg-0">
-                                <li>
-                                    <a href="/User/Create" class="border-left border-right" type="button">
-                                        <i class="fa fa-user-plus"></i> Register
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/Secured" class="" type="button">
-                                        <i class="fa fa-arrow-circle-right"></i> Log in
-                                    </a>
-                                </li>
-                            </ul>
+                                        <ul class="navbar-nav ml-auto ml-lg-0">
+                                            <li>
+                                                <a href="/User/Create" class="border-left border-right" type="button">
+                                                    <i class="fa fa-user-plus"></i> Register
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/Secured" class="" type="button">
+                                                    <i class="fa fa-arrow-circle-right"></i> Log in
+                                                </a>
+                                            </li>
+                                        </ul>
                             }
                         }
                     </ul>
