@@ -5,98 +5,180 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html class="auth2 light-theme" lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register | Project Catalyst</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="~/lib/ideascale-ui/ideascale-ui.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/campaign-v2/ideascale-v4-auth2-responsive.css" />
 </head>
-
-<body class="mt-5">
-    <header class="text-center">
-        <img class="rounded mx-auto d-block" src="~/images/iohk_logo_2.png" />
-        <h1 class="h2 font-weight-normal">
-            Create Your Account
-        </h1>
-        <p class="mt-4 text-secondary">
-            Already have an account? <a href="/Secured" class="text-capitalize text-primary">Log in</a>
-        </p>
-    </header>
-    <fieldset>
-        <div class="mx-auto" style="width: 375px;">
-            @if(ViewBag.Message != null)
-            {
-                <div class="p-1 mb-2 bg-success text-white">@ViewBag.Message</div>
-            }
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <div class="input-group">
-                        <input asp-for="Name" class="form-control" required />
-                        <span asp-validation-for="Name" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Email" class="control-label">Email Address</label>
-                    <div class="input-group" id="showHidePwd">
-                        <input asp-for="Email" class="form-control" type="email" required />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Password" class="control-label"></label>
-                    <div class="input-group" id="showHidePwd">
-                        <input id="txtPassword" asp-for="Password" class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@@#$%^&*_=+-]).{8,12}$" />
-                        <div class="input-group-append">
-                            <a href="#" class="btn btn-secondary" type="button">
-                                <span id="pwdIcon" class="fa fa-eye-slash icon" aria-hidden="true"></span>
-                            </a>
+<body class="sec-508 custom-css-enabled pace-done">
+    <div class="container auth2-centered as-table-lg">
+        <section class="as-cell-lg">
+            <header>
+                <div class="auth-logo">
+                    <img class="rounded mx-auto d-block" src="~/images/iohk_logo_2.png" alt="Community Logo" />
+                </div> 
+                <h1 class="h2 font-weight-normal">Create Your Account</h1>
+                <p class="mt-4">Already have an account? <a href="/Secured" class="text-capitalize">Log in</a></p>
+            </header>
+            <fieldset>
+                <div class="mx-auto auth2-form">
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="p-1 mb-2 bg-success text-white">@ViewBag.Message</div>
+                    }
+                    <form asp-action="Create" method="post" class="smart-json-form mt-25 captcha">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label">
+                                Name
+                                <span class="required">*</span>
+                            </label>
+                            <button type="button" class="" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<ul><li>This is your email address that you&#39;ll use to sign in to your ideascale account.</li><li>Keep in mind that we will never display your email address to the public. It will only be used to notify you of new ideas or comments to the communities.</li><li>We will send an email to this address to verify your account before you can continue.</li><li>If you did not receive the email, please check your SPAM folder.</li><li>Make sure you have added <strong>noreply@ideascale.com</strong> to your address book and whitelist.</li></ul>">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="sr-only">(Instruction about Your Email Address)</span>
+                            </button>
+                            <input asp-for="Name" class="form-control" required />
+                            <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
-                        <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label id="lblConPwd">Confirm Password</label>
-                    <div class="input-group" id="showHidePwdConfirm">
-                        <input id="txtConfirmPassword" class="form-control" type="password" required />
-                        <div class="input-group-append">
-                            <a href="#" class="btn btn-secondary" type="button">
-                                <span id="conPwdIcon" class="fa fa-eye-slash icon" aria-hidden="true"></span>
-                            </a>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label">
+                                    Email Address
+                                    <span class="required">*</span>
+                                </label>
+                                <button type="button" class="" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<ul><li>This is your email address that you&#39;ll use to sign in to your ideascale account.</li><li>Keep in mind that we will never display your email address to the public. It will only be used to notify you of new ideas or comments to the communities.</li><li>We will send an email to this address to verify your account before you can continue.</li><li>If you did not receive the email, please check your SPAM folder.</li><li>Make sure you have added <strong>noreply@ideascale.com</strong> to your address book and whitelist.</li></ul>">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span class="sr-only">(Instruction about Your Email Address)</span>
+                                </button>
+                                <input id="register-email" name="email-address" asp-for="Email" class="form-control" type="email" required />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label">
+                                Password
+                                <span class="required">*</span>
+                            </label>
+                            <button type="button" class="" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<ul><li>This is your email address that you&#39;ll use to sign in to your ideascale account.</li><li>Keep in mind that we will never display your email address to the public. It will only be used to notify you of new ideas or comments to the communities.</li><li>We will send an email to this address to verify your account before you can continue.</li><li>If you did not receive the email, please check your SPAM folder.</li><li>Make sure you have added <strong>noreply@ideascale.com</strong> to your address book and whitelist.</li></ul>">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="sr-only">(Instruction about Your Email Address)</span>
+                            </button>
+                            <div class="input-group" id="showHidePwd">
+                                <input id="txtPassword" asp-for="Password" class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@@#$%^&*_=+-]).{8,12}$" />
+                                <div class="input-group-append">
+                                    <a href="#" class="btn btn-secondary show-hide" type="button">
+                                        <span id="pwdIcon" class="fa fa-eye-slash icon" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblConPwd" class="control-label">
+                                Confirm Password
+                                <span class="required">*</span>
+                            </label>
+                            <button type="button" class="" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<ul><li>This is your email address that you&#39;ll use to sign in to your ideascale account.</li><li>Keep in mind that we will never display your email address to the public. It will only be used to notify you of new ideas or comments to the communities.</li><li>We will send an email to this address to verify your account before you can continue.</li><li>If you did not receive the email, please check your SPAM folder.</li><li>Make sure you have added <strong>noreply@ideascale.com</strong> to your address book and whitelist.</li></ul>">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="sr-only">(Instruction about Your Email Address)</span>
+                            </button>
+                            <div class="input-group" id="showHidePwdConfirm">
+                                <input id="txtConfirmPassword" class="form-control" type="password" required />
+                                <div class="input-group-append">
+                                    <a href="#" class="btn btn-secondary show-hide" type="button">
+                                        <span id="conPwdIcon" class="fa fa-eye-slash icon" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group select2-field">
+                            <label for="select-language">
+                                Language
+                                <span class="required">*</span>
+                            </label>
+                            <button type="button" class="" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<ul><li>This is your email address that you&#39;ll use to sign in to your ideascale account.</li><li>Keep in mind that we will never display your email address to the public. It will only be used to notify you of new ideas or comments to the communities.</li><li>We will send an email to this address to verify your account before you can continue.</li><li>If you did not receive the email, please check your SPAM folder.</li><li>Make sure you have added <strong>noreply@ideascale.com</strong> to your address book and whitelist.</li></ul>">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="sr-only">(Instruction about Your Email Address)</span>
+                            </button>
+                            <select id="select-language" name="languageID" class="form-control select2-hidden-accessible" data-select2-id="select-language" tabindex="-1" aria-hidden="true">
+                                <option value="0"> Select Language</option>
+                                <option value="-1" selected="" data-select2-id="2"> English</option>
+                                <option value="1"> Deutsch (German)</option>
+                                <option value="2"> Français (French)</option>
+                                <option value="3"> Nederlands (Dutch)</option>
+                                <option value="4"> Español (Spanish)</option>
+                                <option value="5"> Português (Portuguese)</option>
+                                <option value="6"> Italiano (Italian)</option>
+                                <option value="7"> Русский (Russian)</option>
+                                <option value="8"> Français Canadien (Canadian French)</option>
+                                <option value="10"> اللغة العربية (Arabic)</option>
+                                <option value="20"> Türkçe (Turkish)</option>
+                                <option value="30"> ไทย (Thai)</option>
+                                <option value="40"> עברית (Hebrew)</option>
+                                <option value="70"> 中国（简体） (Chinese (Standard/Simplified Mandarin))</option>
+                                <option value="80"> 中國（繁體） (Chinese (Taiwanese/Traditional Mandarin))</option>
+                                <option value="90"> 日本語 (Japanese)</option>
+                                <option value="100"> 한국어 (Korean)</option>
+                                <option value="110"> Հայերեն (Armenian)</option>
+                                <option value="120"> Polski (Polish)</option>
+                                <option value="130"> Magyar (Hungarian)</option>
+                                <option value="140"> Svenska (Swedish)</option>
+                                <option value="150"> Suomalainen (Finnish)</option>
+                                <option value="160"> Dansk (Danish)</option>
+                                <option value="170"> Slovenčina (Slovak)</option>
+                                <option value="180"> Română (Romanian)</option>
+                                <option value="200"> Norsk (Norwegian)</option>
+                                <option value="210"> Ελληνικά (Greek)</option>
+                                <option value="220"> Čeština (Czech)</option>
+                                <option value="230"> Català (Catalan)</option>
+                                <option value="240"> Hrvatski (Croatian)</option>
+                                <option value="241"> Íslenska (Icelandic)</option>
+                                <option value="242"> Slovenščina (Slovene)</option>
+                                <option value="243"> ភាសាខ្មែរ (Khmer, Cambodian)</option>
+                                <option value="244"> български (Bulgarian)</option>
+                                <option value="245"> Cymraeg (Welsh)</option>
+                                <option value="246"> Lëtzebuergesch (Luxembourgish)</option>
+                                <option value="247"> Українська (Ukrainian)</option>
+                                <option value="248"> Tiếng Việt (Vietnamese)</option>
+                                <option value="249"> Azərbaycan (Azerbaijani)</option>
+                                <option value="250"> Português brasileiro (Brazilian Portuguese)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="default-language" class="control-label">
+                                <b>Default Community Language:</b> English
+                            </label>
+                            <div>
+                                <b>Languages supported by the Community:</b> English
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" name="newsSubscribed" value="true">
+                                <span class="check-mark" aria-hidden="true"></span>
+                                Send me news and updates about IdeaScale
+                            </label>
+                        </div>
+                        <hr class="my-4">
+                        <button type="submit" class="btn btn-xl btn-primary btn-block">Register</button>
+                    </form>
                 </div>
-                 <span id='message'></span>
-                <div class="form-group mt-2">
-                    <b>Default Community Language:</b> English
-                </div>
-                <div class="form-group">
-                    <b>Language supported by the Community:</b> English
-                </div>
-                <div class="mt-3">
-                    <input type="checkbox" id="cbNewsSubscribed" class="custom-checkbox">
-                    <label id="lblNewsSubscribed">Send me news and updates about Project Catalyst</label>
-                </div>
-                <hr />
-                <div class="form-group">
-                    <button id="btnRegister" class="btn btn-primary btn-block btn-register" type="submit">Register</button>
-                </div>
-            </form>
-        </div>
-    </fieldset>
-
-    <footer>
-        <p class="text-center text-secondary fixed-bottom">Copyright &copy; @DateTime.Now.Year | All rights reserved</p>
-    </footer>
-
+            </fieldset>
+            <footer>
+                Copyright © 2022 IdeaScale | <a href="#" target="_blank">IdeaScale End User Terms</a> | <a href="#" target="_blank">IdeaScale Privacy Policy</a>
+            </footer>
+        </section>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#showHidePwd a').on('click', function () {
+        $(document).ready(function() {
+            $('#showHidePwd a').on('click', function() {
                 event.preventDefault();
                 if ($('#txtPassword').attr("type") == "text") {
                     $('#txtPassword').attr('type', 'password');
@@ -108,7 +190,7 @@
                     $('#showHidePwd #pwdIcon').addClass("fa-eye");
                 }
             });
-            $('#showHidePwdConfirm a').on('click', function () {
+            $('#showHidePwdConfirm a').on('click', function() {
                 event.preventDefault();
                 if ($('#txtConfirmPassword').attr("type") == "text") {
                     $('#txtConfirmPassword').attr('type', 'password');
@@ -122,15 +204,13 @@
             });
         });
 
-        $('#txtPassword, #txtConfirmPassword').on('keyup', function () {
+        $('#txtPassword, #txtConfirmPassword').on('keyup', function() {
             if ($('#txtPassword').val() == $('#txtConfirmPassword').val()) {
                 $('#message').html('Matching').css('color', 'green');
-            } else 
+            } else
                 $('#message').html('Not Matching').css('color', 'red');
         });
     </script>
+    <script src="/js/site.js"></script>
 </body>
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
 </html>

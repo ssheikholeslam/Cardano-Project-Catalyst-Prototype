@@ -186,40 +186,10 @@ a:hover {
             -webkit-border-radius: 5px;
         }
 
-/*User Registration Pages Styling*/
-.btn-register,
-.btn-login {
-    background-color: #384ec1;
-    font-weight: 700;
+.input-group-append .show-hide {
+    background: #f0f2f5;
 }
 
-/*Community Landing Page Styling*/
-
-.how-it-works h2 {
-    font-size: 28px;
-    font-weight: normal;
-    color: #798aff;
-}
-
-.how-it-works h3 {
-    font-size: 18px;
-    color: #333333;
-}
-
-.how-it-works p {
-    font-size: 16px;
-    color: #333333;
-}
-
-hr.dark {
-    border: 0;
-    height: 2px;
-    width: 25%;
-    background-image: linear-gradient( to right, #000000, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0) );
-    margin-bottom: 45px;
-}
-
-.active-campaings p {
-    color: #333333;
-    font-size: 16px;
-}
+    .input-group-append .show-hide:hover .show-hide:focus {
+        background: #f0f2f5;
+    }
