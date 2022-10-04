@@ -54,3 +54,6 @@ var quill = new Quill('#editor', {
 
     theme: 'snow'
 });
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
