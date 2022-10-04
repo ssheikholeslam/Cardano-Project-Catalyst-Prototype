@@ -1,3 +1,4 @@
+using Cardano_Catalyst.Interfaces;
 using Cardano_Catalyst.Models;
 using Cardano_Catalyst.Settings;
 using Microsoft.AspNetCore.Builder;
@@ -25,13 +26,24 @@ namespace Cardano_Catalyst
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+
+            services.AddTransient<IEmployee, EmployeeDBContext>();
+
+            services.Configure<MongoDbConfig>(
+                options =>
+                {
+                    options.ConnectionString = Configuration.GetSection("MongoDbConfig:ConnectionString").Value;
+                    options.DatabaseName = Configuration.GetSection("MongoDbConfig:DatabaseName").Value;
+                });
+
             var mongoDbSettings = Configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
             services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddMongoDbStores<ApplicationUser, ApplicationRole, Guid>(
-                mongoDbSettings.ConnectionString, mongoDbSettings.Name
+                mongoDbSettings.ConnectionString, mongoDbSettings.DatabaseName
                 );
-            services.AddControllersWithViews();
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
